@@ -1,0 +1,22 @@
+{
+  "name": "local-fork",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orbs-network/local-fork.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@defi.org/web3-candies": "2.x",
+    "dotenv": "16.x"
+  },
+  "scripts": {
+    "prettier": "prettier --write '{contracts,src,test}/**/*.{ts,js,json,sol}'",
+    "typechain": "typechain --target=web3-v1 --out-dir=typechain-abi 'abi/**/*.json'",
+    "prebuild": "npm run prettier && npm run typechain",
+    "build": "",
+    "test": "DEBUG=web3-candies hardhat test --logs"
+  }
+}
